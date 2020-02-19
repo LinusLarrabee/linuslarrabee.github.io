@@ -8,8 +8,8 @@ header-img: img/bg-index.jpg
 catalog: true
 categories: "technology"
 tags: 
-	- Android TV
-	- ClashX
+    - Android TV
+    - ClashX
 ---
 
 [TOC]

@@ -8,10 +8,10 @@ header-img: img/bg-index.jpg
 catalog: true
 categories: "technology"
 tags: 
-	- Back-up
-	- digital figure
-	- Day-One
-	- IFTTT
+    - Back-up
+    - digital figure
+    - Day-One
+    - IFTTT
 ---
 
 There are two topic about personal digital figure. One is back-ups of your past digital figure, another is syncing your digital figure.

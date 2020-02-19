@@ -9,7 +9,7 @@ categories: "life"
 catalog: true
 tags:
     - Barenboim
-	- life
+    - life
 ---
 - 我是怎么在自己这么垃圾的情况下用 VIM 和 Markdown 写博客的，哭了
 
