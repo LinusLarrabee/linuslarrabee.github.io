@@ -1,7 +1,13 @@
 ---
 layout: post
 title: "巴伦博伊姆"
-categories: "blog"
+subtitle:   None
+date:       2019-04-20
+author:     SH
+header-img: img/post-bg-ios9-web.jpg
+catalog: blog
+tags:
+    - Barenboim
 ---
 ## 第一篇博客，随便写的
 
