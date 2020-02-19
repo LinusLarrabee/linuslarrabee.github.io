@@ -1,6 +1,6 @@
 ---
 layout: post
-title: " paypal 汇率问题"
+title: paypal 汇率问题
 subtitle:   
 date:       2019-06-08
 author:     SH
