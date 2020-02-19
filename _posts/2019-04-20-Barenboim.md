@@ -1,17 +1,18 @@
 ---
 layout: post
 title: "巴伦博伊姆"
-subtitle:   None
+subtitle:   第一篇博客，随便写的
 date:       2019-04-20
 author:     SH
 header-img: img/post-bg-ios9-web.jpg
-catalog: blog
+categories: life
+catalog: true
 tags:
     - Barenboim
+	- life
 ---
-## 第一篇博客，随便写的
-
 - 我是怎么在自己这么垃圾的情况下用 VIM 和 Markdown 写博客的，哭了
+
 - 真是，中文输入法就别退vim了，要死
 - 他算是开启了我的追星之旅吧
 - 总是在一个无聊的早上，会想起去年见巴伦博伊姆的经历。

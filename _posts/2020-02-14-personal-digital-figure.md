@@ -1,7 +1,17 @@
 ---
 layout: post
 title: "Personal Digital Figure"
+subtitle:   Android-TV 翻墙及与家用电视联动使用
+date:       2020-02-14
+author:     SH
+header-img: img/bg-index.jpg
+catalog: true
 categories: "technology"
+tags: 
+	- Back-up
+	- digital figure
+	- Day-One
+	- IFTTT
 ---
 
 There are two topic about personal digital figure. One is back-ups of your past digital figure, another is syncing your digital figure.
