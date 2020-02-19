@@ -5,7 +5,6 @@ subtitle:   第一篇博客，随便写的
 date:       2019-04-20
 author:     SH
 header-img: img/post-bg-ios9-web.jpg
-categories: life
 catalog: true
 tags:
     - Barenboim
