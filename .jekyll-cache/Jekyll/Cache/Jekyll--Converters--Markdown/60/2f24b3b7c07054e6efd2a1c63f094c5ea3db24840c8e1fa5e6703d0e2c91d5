@@ -1,0 +1,128 @@
+I"\<h3 id="usage-setting">Usage Setting</h3>
+
+<ol>
+  <li>
+    <p>Video &amp; Audio format</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-f</span> 137+140 
+<span class="c"># 140: m4a_dash container, mp4a.40.2@128k (44100Hz)</span>
+<span class="c"># 137: avc1.640028, 30fps, video only, namely 1920*1080 mp4.</span>
+</code></pre></div>    </div>
+
+    <p>Using youtube-dl in shell, instead of running the shell script in AppleScript will download the best format for video and audio preferentially.</p>
+  </li>
+  <li>
+    <p>Proxy Setting…(waiting for update)</p>
+
+    <p><img src="../img/posts/2019-06-15-youtube-dl.asserts/Screen Shot 2020-02-13 at 23.33.25.png" alt="Screen Shot 2020-02-13 at 23.33.25" /></p>
+  </li>
+  <li>
+    <p>External-downloader</p>
+  </li>
+  <li>
+    <p>List</p>
+  </li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   --no-playlist     
+   #Download only the video, if the URL refers to a video and a playlist.
+   --yes-playlist     
+   #Download the playlist, if the URL refers to a video and a playlist.
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>ID</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--id</span>	
+<span class="c"># Use only video ID in file name</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Mainland Internet connect</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">until </span>youtube-dl https://www.example.com<span class="p">;</span> <span class="k">do </span><span class="nb">sleep </span>5 <span class="p">;</span> <span class="k">done</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="personal-config-procession">Personal Config Procession</h3>
+
+<p><img src="" alt="" /></p>
+
+<ol>
+  <li>Add the following in .bash/profile</li>
+</ol>
+
+<h3 id="install">Install</h3>
+
+<p>​	find config file in the following route <code class="highlighter-rouge">/.config/youtube-dl</code></p>
+
+<ul>
+  <li>youtube-dl –proxy 127.0.0.1:1087 –no-check-certificate https://www.youtube.com/watch?v=F9mBUwgk718</li>
+  <li>just like this</li>
+</ul>
+
+<h3 id="automator">Automator</h3>
+
+<ol>
+  <li>
+    <p>write a shell file with the name”dl.sh”, save all the shell script in the finder of “,”</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>until youtube-dl `pbpaste`; do sleep 5 ; done
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Tap <code class="highlighter-rouge">./,/d</code> , press “tap”, then press enter</p>
+  </li>
+</ol>
+
+<h2 id="ffmpeg-download-digital-concert-hall">FFMPEG Download Digital Concert Hall</h2>
+
+<p><a href="https://www.digitalconcerthall.com/en/"><img src="https://www.digitalconcerthall.com/img/main-header/brand.svg" alt="The Berliner Philharmoniker's Digital Concert Hall" /></a></p>
+
+<p>The main idea is download through ffmpeg with m3u8.</p>
+
+<h3 id="url-form-and-transform">Url form and transform</h3>
+
+<ol>
+  <li>
+    <p>The numbering scheme of this concert has a structure of “xxxxx-y”, xxxxx is the number of this concert, y is the number of some special part of this concert.</p>
+  </li>
+  <li>
+    <p>Useas a example video of Berlin Philarmoniker’s Digital Concert Hall.</p>
+  </li>
+  <li>
+    <p>The url will be transformed into m3u8 url.</p>
+
+    <p><a href="https://www.digitalconcerthall.com/en/concert/52519">https://www.digitalconcerthall.com/en/concert/52519</a></p>
+
+    <p><a href="https://world-vod.dchdns.net/hlss/dch/52519-1/h264_VERY_HIGH_ONE.mp4/index-v1-a1.m3u8">https://world-vod.dchdns.net/hlss/dch/52519-1/h264_VERY_HIGH_ONE.mp4/index-v1-a1.m3u8</a></p>
+
+    <p>the first one represents 52519 is the numbering scheme of this concert. the second one will link to the first chapter of this concert, namely beethoven piano concerto no.3 performed by Daniel Barenboim and Kirill Petrenko</p>
+  </li>
+  <li>
+    <p>Some old video (approximately number before 10000) will add <strong><em>_en</em></strong> before <strong><em>.mp4</em></strong></p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://world-vod.dchdns.net/hlss/dch/xxxx-y/h264_VERY_HIGH_ONE_en.mp4/index-v1-a1.m3u8
+https://world-vod.dchdns.net/hlss/dch/xxxxx-y/h264_VERY_HIGH_ONE.mp4/index-v1-a1.m3u8 
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>If you’re in the Great China Area. Heavy recommend that you just stay here and watch the video online without internet tools such as ssr or vpn. Video can be watched without internet tools, but even with the help of these tools, the download speed is still around 100MB per 10 minutes</p>
+  </li>
+</ol>
+
+<h3 id="example-code">Example Code</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Both ways work. The following way comes from Yudong Wang</span>
+ffmpeg <span class="nt">-allowed_extensions</span> ALL <span class="nt">-protocol_whitelist</span> <span class="s2">"file,http,crypto,tcp,tls,https"</span> <span class="nt">-i</span> https://world-vod.dchdns.net/hlss/dch/52519-1/h264_VERY_HIGH_ONE.mp4/index-v1-a1.m3u8 <span class="nt">-vcodec</span> copy <span class="nt">-acodec</span> copy BeethovenPC3.mp4
+<span class="c"># The following way comes from Bilibili</span>
+ffmpeg <span class="nt">-i</span> <span class="s2">"https://world-vod.dchdns.net/hlss/dch/51040-2/h264_VERY_HIGH_ONE.mp4/index-v1-a1.m3u8"</span> <span class="nt">-bsf</span>:a aac_adtstoasc <span class="nt">-vcodec</span> copy <span class="nt">-c</span> copy BerlinPhil/BartokViolaConcertoMÁTÉSZŰCS.mp4
+<span class="c"># The default address is the User/youraccount</span>
+ffmpeg <span class="nt">-i</span> <span class="s2">"https://world-vod.dchdns.net/hlss/dch/51040-2/h264_VERY_HIGH_ONE_en.mp4/index-v1-a1.m3u8"</span> <span class="nt">-c</span> copy <span class="nt">-map</span> a <span class="s2">"BerlinPhil/Bartok ViolaConcerto.ts"</span>
+<span class="c"># only audio</span>
+</code></pre></div></div>
+
+<h2 id="mkv及webm的自我科普">Mkv及webm的自我科普；</h2>
+:ET
