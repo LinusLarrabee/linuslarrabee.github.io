@@ -20,7 +20,7 @@ tags:
 
 期间经历了：
 
-	1. 大号被 Frozen
+ 	1. 大号被 Frozen
  	2. 与口音不太好的美亚客服互相听不懂
  	3. 用小号找 online chat 要提供 bill address 
  	4. 小号被限制 online chat 权限
